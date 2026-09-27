@@ -148,8 +148,33 @@ public class ManageStudent {
         // 10) Append new student
         Student[] newArray = appendStudent(arr,new Student(6,"jawad"));
         sortByGradeDesc(newArray);
-        System.out.println("The updated students list is : " + Arrays.toString(newArray));
+        System.out.println("The updated array of students :");
+        for (Student s : newArray) System.out.println(s);
 
+        System.out.println();
+        System.out.println("===let's build the 2D array representation of classrooms ===");
+        Student[][] School = {
+                {
+                    new Student(1,"Ahmed",20,19),
+                    new Student(2,"Anass",19,17),
+                    new Student(3,"Adam",19,14)
+                },{
+                    new Student(4,"Mohammed",20,15),
+                    new Student(5,"Samir",19,19),
+                    new Student(6,"Amine",21,20)
+                }
+        };
+        for(int i = 0 ; i < School.length ; i++){
+            System.out.println("--Students of classroom " + (i+1) + " : ");
+            for(int j = 0 ; j < School[0].length ; j++){
+                System.out.println(School[i][j] + " ,");
+            }
+        }
+
+        sortByGradeDesc(School[0]);
+        System.out.println("The top student of the first classroom is : " + School[0][0]);
+        sortByGradeDesc(School[1]);
+        System.out.println("The top student of the Second classroom is : " + School[1][0]);
     }
 }
 
